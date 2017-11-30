@@ -347,9 +347,12 @@
     向前声明也解决了2个类相互引用的问题。假如</code><twoclas><code>添加新增和删除</code><oneclass>`对象的方法。</oneclass></twoclas></oneclass></twoclas></p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@interface</span> <span class="string">TwoClass :</span> NSObject</div><div class="line">-(<span class="keyword">void</span>)<span class="string">addObj:</span>(OneClass *)add_obj;</div><div class="line">-(<span class="keyword">void</span>)<span class="string">removeObj:</span>(OneClass *)add_obj;</div><div class="line"><span class="meta">@end</span></div></pre></td></tr></table></figure>
 <p>此时，若要编译<code>&lt;OneClass&gt;</code>，则编译器必须知道<code>&lt;TwoClas&gt;</code>这个类，而要编译器编译<code>&lt;OneClass&gt;</code>，则有知道<code>&lt;TwoClas&gt;</code>如果在各自的头文件引用对方的头文件，则会导致循环引用，如果使用<code>&lt;import&gt;</code>而非<code>&lt;include&gt;</code>不会导致死循环，如果使用<code>&lt;include&gt;</code>则会死循环，可以测试一下。如果<code>&lt;TwoClas&gt;</code>继承<code>&lt;OneClass&gt;</code>，这种情况是要在头文件中去声明。</p>
-<p>#要点:</p>
-<p>##1.除非却又必要，否侧不要引入头文件，一般来说，应在某个类的头文件中使用向前声明来提起别的类，并在实现文件中引用引用那些头文件，这样做可以尽量降低类之间的耦合。</p>
-<p>##2.有时无法使用向前声明，比如要声明某个类遵循一项协议。这种情况下，尽量把该类遵循这个协议的申明转移到分类中进行，最后不行，就把协议单独放在一个头文件中，然后使用！</p>
+<h2 id="要点"><a href="#要点" class="headerlink" title="要点:"></a>要点:</h2><ul>
+<li><p>除非却又必要，否侧不要引入头文件，一般来说，应在某个类的头文件中使用向前声明来提起别的类，并在实现文件中引用引用那些头文件，这样做可以尽量降低类之间的耦合。</p>
+</li>
+<li><p>有时无法使用向前声明，比如要声明某个类遵循一项协议。这种情况下，尽量把该类遵循这个协议的申明转移到分类中进行，最后不行，就把协议单独放在一个头文件中，然后使用！</p>
+</li>
+</ul>
 
           
         
