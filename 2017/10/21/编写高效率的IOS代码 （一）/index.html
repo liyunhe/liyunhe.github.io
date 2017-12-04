@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ios," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="在类的头文件中尽量少引用其他的头文件与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下： 1234567891011121314//OneClass.h#import &amp;lt;Foundation/Foundation.h&amp;gt;@interface OneClass : NSObject@pro">
+<meta name="description" content="在类的头文件中尽量少引用其他的头文件与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下： 1234567891011121314//OneClass.h#import &amp;lt;Foundation/Founsdation.h&amp;gt;@interface OneClass : NSObject@pr">
+<meta name="keywords" content="ios">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编写高效率的IOS代码 （一）">
 <meta property="og:url" content="http://yoursite.com/2017/10/21/编写高效率的IOS代码 （一）/index.html">
 <meta property="og:site_name" content="York Lee">
-<meta property="og:description" content="在类的头文件中尽量少引用其他的头文件与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下： 1234567891011121314//OneClass.h#import &amp;lt;Foundation/Foundation.h&amp;gt;@interface OneClass : NSObject@pro">
+<meta property="og:description" content="在类的头文件中尽量少引用其他的头文件与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下： 1234567891011121314//OneClass.h#import &amp;lt;Foundation/Founsdation.h&amp;gt;@interface OneClass : NSObject@pr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-30T12:01:19.000Z">
+<meta property="og:updated_time" content="2017-12-04T07:31:44.372Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编写高效率的IOS代码 （一）">
-<meta name="twitter:description" content="在类的头文件中尽量少引用其他的头文件与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下： 1234567891011121314//OneClass.h#import &amp;lt;Foundation/Foundation.h&amp;gt;@interface OneClass : NSObject@pro">
+<meta name="twitter:description" content="在类的头文件中尽量少引用其他的头文件与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下： 1234567891011121314//OneClass.h#import &amp;lt;Foundation/Founsdation.h&amp;gt;@interface OneClass : NSObject@pr">
 
 
 
@@ -331,7 +332,7 @@
 
       
         <h2 id="在类的头文件中尽量少引用其他的头文件"><a href="#在类的头文件中尽量少引用其他的头文件" class="headerlink" title="在类的头文件中尽量少引用其他的头文件"></a>在类的头文件中尽量少引用其他的头文件</h2><p>与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//OneClass.h</span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">OneClass</span> : <span class="title">NSObject</span></span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_one;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_two;</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//OneClass.m</span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"OneClass.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">OneClass</span></span></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//OneClass.h</span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Founsdation.h&gt;</span></span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">OneClass</span> : <span class="title">NSObject</span></span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_one;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_two;</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//OneClass.m</span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"OneClass.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">OneClass</span></span></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
 <figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在Objective-C几乎任何类都需要引用`&lt;Foundation/Foundation.h&gt;`如果不引用这个框架的化，就要引用与其超类所对应得框架。例如`&lt;UIViewController&gt;`需要引用`&lt;UIKit.h&gt;`,OK,过一段时间你又创建了一个`&lt;TwoClass&gt;`然后你觉得每个类`&lt;OneClass&gt;`OneClass里有应该存在一个`&lt;TwoClas&gt;`一般都会为`&lt;OneClass&gt;`添加一条属性</div></pre></td></tr></table></figure>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//OneClass.h</span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"TwoClass.h"</span></span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">OneClass</span> : <span class="title">NSObject</span></span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_one;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_two;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>)TwoClass *two_obj;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
 <p>OK！！ 这样的确完成了我们的需求，但是存在一个问题:在编译一个使用<code>&lt;OneClass&gt;</code>文件时，我们不用知道<code>&lt;TwoClass&gt;</code>的全部细节，我们只要知道有以类名叫<code>&lt;TwoClass&gt;</code>存在就好了！SO！！有一个办法可以将这种情况告诉编译器:</p>
@@ -363,6 +364,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ios/" rel="tag"># ios</a>
+          
+        </div>
       
 
       
@@ -470,6 +477,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
             
 
           </nav>
