@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="OS原生端如何使用JSCore进行原生和iOS的交互OC调用js的方法在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中[webView stringByEvaluatingJavaScriptFromString:@&amp;quot;editReady2();”];调用此方法即可调用js中的方法。此处有的时候可能会调用不到js中的方法，原因有">
+<meta name="description" content="IOS原生端如何使用JSCore进行原生和iOS的交互OC调用js的方法在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中[webView stringByEvaluatingJavaScriptFromString:@&amp;quot;editReady2();”];调用此方法即可调用js中的方法。此处有的时候可能会调用不到js中的方法，原因">
 <meta name="keywords" content="H5+Native">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS原生端如何使用JSCore进行原生和iOS的交互">
 <meta property="og:url" content="http://yorklee.top/2017/12/05/iOS原生端如何使用JSCore进行原生和iOS的交互/index.html">
 <meta property="og:site_name" content="York Lee">
-<meta property="og:description" content="OS原生端如何使用JSCore进行原生和iOS的交互OC调用js的方法在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中[webView stringByEvaluatingJavaScriptFromString:@&amp;quot;editReady2();”];调用此方法即可调用js中的方法。此处有的时候可能会调用不到js中的方法，原因有">
+<meta property="og:description" content="IOS原生端如何使用JSCore进行原生和iOS的交互OC调用js的方法在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中[webView stringByEvaluatingJavaScriptFromString:@&amp;quot;editReady2();”];调用此方法即可调用js中的方法。此处有的时候可能会调用不到js中的方法，原因">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-05T08:55:44.112Z">
+<meta property="og:updated_time" content="2017-12-05T08:58:19.218Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS原生端如何使用JSCore进行原生和iOS的交互">
-<meta name="twitter:description" content="OS原生端如何使用JSCore进行原生和iOS的交互OC调用js的方法在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中[webView stringByEvaluatingJavaScriptFromString:@&amp;quot;editReady2();”];调用此方法即可调用js中的方法。此处有的时候可能会调用不到js中的方法，原因有">
+<meta name="twitter:description" content="IOS原生端如何使用JSCore进行原生和iOS的交互OC调用js的方法在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中[webView stringByEvaluatingJavaScriptFromString:@&amp;quot;editReady2();”];调用此方法即可调用js中的方法。此处有的时候可能会调用不到js中的方法，原因">
 
 
 
@@ -352,7 +352,7 @@
       
 
       
-        <h3 id="OS原生端如何使用JSCore进行原生和iOS的交互"><a href="#OS原生端如何使用JSCore进行原生和iOS的交互" class="headerlink" title="OS原生端如何使用JSCore进行原生和iOS的交互"></a>OS原生端如何使用JSCore进行原生和iOS的交互</h3><h3 id="OC调用js的方法"><a href="#OC调用js的方法" class="headerlink" title="OC调用js的方法"></a>OC调用js的方法</h3><p><code>在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中</code><br><code>[webView stringByEvaluatingJavaScriptFromString:@&quot;editReady2();”];</code><br>调用此方法即可调用js中的方法。<br>此处有的时候可能会调用不到js中的方法，原因有可能是js的代码和html的代码是分开放置的，通过此时不一定能够拿到js中的代码。解决的方法是，先获取整个html的代码。在html代码的后面拼接js的路径，然后使用 webView loadHtml的方法去执行网页上的数据。</p>
+        <h3 id="IOS原生端如何使用JSCore进行原生和iOS的交互"><a href="#IOS原生端如何使用JSCore进行原生和iOS的交互" class="headerlink" title="IOS原生端如何使用JSCore进行原生和iOS的交互"></a>IOS原生端如何使用JSCore进行原生和iOS的交互</h3><h3 id="OC调用js的方法"><a href="#OC调用js的方法" class="headerlink" title="OC调用js的方法"></a>OC调用js的方法</h3><p><code>在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中</code><br><code>[webView stringByEvaluatingJavaScriptFromString:@&quot;editReady2();”];</code><br>调用此方法即可调用js中的方法。<br>此处有的时候可能会调用不到js中的方法，原因有可能是js的代码和html的代码是分开放置的，通过此时不一定能够拿到js中的代码。解决的方法是，先获取整个html的代码。在html代码的后面拼接js的路径，然后使用 webView loadHtml的方法去执行网页上的数据。</p>
 <h3 id="JS调用oc中的方法"><a href="#JS调用oc中的方法" class="headerlink" title="JS调用oc中的方法"></a>JS调用oc中的方法</h3><p><code>在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中</code><br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">JSContext *context = [self.webView valueForKeyPath:@<span class="string">"documentView.webView.mainFrame.javaScriptContext”];</span></div><div class="line"><span class="comment">//change2  前后端约定的字符串</span></div><div class="line">context[@<span class="string">"change2"</span>] = ^()&#123;</div><div class="line">NSArray *params = [JSContext currentArguments];</div><div class="line"><span class="comment">//根据点击js端的方法，会传递对应的参数给OC端，OC端根据约定的参数规则即可相应的对应的操作。</span></div><div class="line">NSLog(@“%@“,params);</div><div class="line">&#125;;</div><div class="line">`</div></pre></td></tr></table></figure></p>
 
       
@@ -549,7 +549,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#OS原生端如何使用JSCore进行原生和iOS的交互"><span class="nav-number">1.</span> <span class="nav-text">OS原生端如何使用JSCore进行原生和iOS的交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OC调用js的方法"><span class="nav-number">2.</span> <span class="nav-text">OC调用js的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS调用oc中的方法"><span class="nav-number">3.</span> <span class="nav-text">JS调用oc中的方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#IOS原生端如何使用JSCore进行原生和iOS的交互"><span class="nav-number">1.</span> <span class="nav-text">IOS原生端如何使用JSCore进行原生和iOS的交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OC调用js的方法"><span class="nav-number">2.</span> <span class="nav-text">OC调用js的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS调用oc中的方法"><span class="nav-number">3.</span> <span class="nav-text">JS调用oc中的方法</span></a></li></ol></div>
             
 
           </div>
