@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="在类的头文件中尽量少引用其他的头文件与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下： 1234567891011121314//OneClass.h#import &amp;lt;Foundation/Founsdation.h&amp;gt;@interface OneClass : NSObject@pr">
+<meta name="description" content="问题如何监听一个数组count的变化 解决方案1、可以在改变数组个数时，进行相应的处理，如果监听的范围不大的话，哪addObject 、removeObject方里处理要监听的事件等 2、比较高效的做是：1[[self mutableArrayValueForKey:@&quot;array&quot;] addObject:@“ff”]; 这样改变数组时就会触发KVO了。 例子：1234@interface Con">
 <meta name="keywords" content="IOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编写高效率的IOS代码 （一）">
-<meta property="og:url" content="http://yorklee.top/2017/10/21/编写高效率的IOS代码 （一）/index.html">
+<meta property="og:title" content="如何监听一个数组count的变化">
+<meta property="og:url" content="http://yorklee.top/2017/12/05/如何监听一个数组count的变化/index.html">
 <meta property="og:site_name" content="York Lee">
-<meta property="og:description" content="在类的头文件中尽量少引用其他的头文件与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下： 1234567891011121314//OneClass.h#import &amp;lt;Foundation/Founsdation.h&amp;gt;@interface OneClass : NSObject@pr">
+<meta property="og:description" content="问题如何监听一个数组count的变化 解决方案1、可以在改变数组个数时，进行相应的处理，如果监听的范围不大的话，哪addObject 、removeObject方里处理要监听的事件等 2、比较高效的做是：1[[self mutableArrayValueForKey:@&quot;array&quot;] addObject:@“ff”]; 这样改变数组时就会触发KVO了。 例子：1234@interface Con">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-04T08:56:36.638Z">
+<meta property="og:updated_time" content="2017-12-05T08:40:46.748Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编写高效率的IOS代码 （一）">
-<meta name="twitter:description" content="在类的头文件中尽量少引用其他的头文件与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下： 1234567891011121314//OneClass.h#import &amp;lt;Foundation/Founsdation.h&amp;gt;@interface OneClass : NSObject@pr">
+<meta name="twitter:title" content="如何监听一个数组count的变化">
+<meta name="twitter:description" content="问题如何监听一个数组count的变化 解决方案1、可以在改变数组个数时，进行相应的处理，如果监听的范围不大的话，哪addObject 、removeObject方里处理要监听的事件等 2、比较高效的做是：1[[self mutableArrayValueForKey:@&quot;array&quot;] addObject:@“ff”]; 这样改变数组时就会触发KVO了。 例子：1234@interface Con">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yorklee.top/2017/10/21/编写高效率的IOS代码 （一）/"/>
+  <link rel="canonical" href="http://yorklee.top/2017/12/05/如何监听一个数组count的变化/"/>
 
 
 
 
 
-  <title>编写高效率的IOS代码 （一） | York Lee</title>
+  <title>如何监听一个数组count的变化 | York Lee</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yorklee.top/2017/10/21/编写高效率的IOS代码 （一）/">
+    <link itemprop="mainEntityOfPage" href="http://yorklee.top/2017/12/05/如何监听一个数组count的变化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="York Lee">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">编写高效率的IOS代码 （一）</h1>
+          <h1 class="post-title" itemprop="name headline">如何监听一个数组count的变化</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-21T13:16:59+08:00">
-                2017-10-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T16:36:28+08:00">
+                2017-12-05
               </time>
             
 
@@ -352,25 +352,16 @@
       
 
       
-        <h2 id="在类的头文件中尽量少引用其他的头文件"><a href="#在类的头文件中尽量少引用其他的头文件" class="headerlink" title="在类的头文件中尽量少引用其他的头文件"></a>在类的头文件中尽量少引用其他的头文件</h2><p>与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//OneClass.h</span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Founsdation.h&gt;</span></span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">OneClass</span> : <span class="title">NSObject</span></span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_one;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_two;</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//OneClass.m</span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"OneClass.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">OneClass</span></span></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在Objective-C几乎任何类都需要引用`&lt;Foundation/Foundation.h&gt;`如果不引用这个框架的化，就要引用与其超类所对应得框架。例如`&lt;UIViewController&gt;`需要引用`&lt;UIKit.h&gt;`,OK,过一段时间你又创建了一个`&lt;TwoClass&gt;`然后你觉得每个类`&lt;OneClass&gt;`OneClass里有应该存在一个`&lt;TwoClas&gt;`一般都会为`&lt;OneClass&gt;`添加一条属性</div></pre></td></tr></table></figure>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//OneClass.h</span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"TwoClass.h"</span></span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">OneClass</span> : <span class="title">NSObject</span></span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_one;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_two;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>)TwoClass *two_obj;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<p>OK！！ 这样的确完成了我们的需求，但是存在一个问题:在编译一个使用<code>&lt;OneClass&gt;</code>文件时，我们不用知道<code>&lt;TwoClass&gt;</code>的全部细节，我们只要知道有以类名叫<code>&lt;TwoClass&gt;</code>存在就好了！SO！！有一个办法可以将这种情况告诉编译器:</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//OneClass.h</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@class</span> <span class="title">TwoClass</span>; //向前声明该类</span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">OneClass</span> : <span class="title">NSObject</span></span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_one;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_two;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>)TwoClass *two_obj;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<p><oneclass><code>则要引用</code><twoclas>`的头文件，因为如果你想使用后者，就要必须知道他的所有详细的接口，于是实现问加就是:</twoclas></oneclass></p>
-<p>//OneClass.m<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#<span class="keyword">import</span> <span class="string">"OneClass.h"</span></div><div class="line">#<span class="keyword">import</span> <span class="string">"TwoClass.h"</span></div><div class="line">@<span class="keyword">implementation</span> OneClass</div><div class="line">@end</div></pre></td></tr></table></figure></p>
-<pre><code>将引用头文件的时间尽量延后，只在确有需要的时候在引用，这样就可以减少类的使用者所需要因入头文件的数量，加入把`&lt;TwoClas&gt;`引入到`&lt;OneClass&gt;`的头文件中，那么没引用一次`&lt;OneClass&gt;`就相当与引用
-</code></pre><p><twoclas><code>和</code><oneclass><code>2个文件，若这种情况持续下去，则要引用许多根本永不到的内容，会增加编译时间。
-    向前声明也解决了2个类相互引用的问题。假如</code><twoclas><code>添加新增和删除</code><oneclass>`对象的方法。</oneclass></twoclas></oneclass></twoclas></p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@interface</span> <span class="string">TwoClass :</span> NSObject</div><div class="line">-(<span class="keyword">void</span>)<span class="string">addObj:</span>(OneClass *)add_obj;</div><div class="line">-(<span class="keyword">void</span>)<span class="string">removeObj:</span>(OneClass *)add_obj;</div><div class="line"><span class="meta">@end</span></div></pre></td></tr></table></figure>
-<p>此时，若要编译<code>&lt;OneClass&gt;</code>，则编译器必须知道<code>&lt;TwoClas&gt;</code>这个类，而要编译器编译<code>&lt;OneClass&gt;</code>，则有知道<code>&lt;TwoClas&gt;</code>如果在各自的头文件引用对方的头文件，则会导致循环引用，如果使用<code>&lt;import&gt;</code>而非<code>&lt;include&gt;</code>不会导致死循环，如果使用<code>&lt;include&gt;</code>则会死循环，可以测试一下。如果<code>&lt;TwoClas&gt;</code>继承<code>&lt;OneClass&gt;</code>，这种情况是要在头文件中去声明。</p>
-<h2 id="要点"><a href="#要点" class="headerlink" title="要点:"></a>要点:</h2><ul>
-<li><p>除非却又必要，否侧不要引入头文件，一般来说，应在某个类的头文件中使用向前声明来提起别的类，并在实现文件中引用引用那些头文件，这样做可以尽量降低类之间的耦合。</p>
-</li>
-<li><p>有时无法使用向前声明，比如要声明某个类遵循一项协议。这种情况下，尽量把该类遵循这个协议的申明转移到分类中进行，最后不行，就把协议单独放在一个头文件中，然后使用！</p>
-</li>
-</ul>
+        <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>如何监听一个数组count的变化</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>1、可以在改变数组个数时，进行相应的处理，如果监听的范围不大的话，哪addObject 、removeObject方里处理要监听的事件等</p>
+<p>2、比较高效的做是：<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="name">self</span> mutableArrayValueForKey:@<span class="string">"array"</span>] addObject:@“ff”]<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<p>这样改变数组时就会触发KVO了。</p>
+<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@interface</span> <span class="attribute">Controller </span>: UIViewController</div><div class="line"><span class="variable">@property</span> (nonatomic, copy) NSString *name;</div><div class="line"><span class="variable">@property</span> (nonatomic, strong) NSMutableArray *array;</div><div class="line"><span class="variable">@end</span></div></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">[self</span> <span class="attr">addObserver:self</span> <span class="attr">forKeyPath:@"array"</span></div><div class="line"><span class="attr">options:</span><span class="string">NSKeyValueObservingOptionNew</span> <span class="string">| NSKeyValueObservingOptionOld</span></div><div class="line"><span class="string"></span><span class="attr">context:</span><span class="literal">NULL</span></div><div class="line"><span class="string">];</span></div></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (void)observeValueForKeyPath:(NSString *)keyPath ofObjec<span class="variable">t:</span>(id)object <span class="keyword">change</span>:(NSDictionary&lt;NSString *,id&gt; *)<span class="keyword">change</span> contex<span class="variable">t:</span>(void *)context &#123;</div><div class="line"><span class="keyword">if</span> ([keyPath isEqualToStrin<span class="variable">g:</span>@<span class="string">"array"</span>]) &#123;</div><div class="line">NSLog(@<span class="comment">"%zd”,self.array.count);</span></div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="改变演示"><a href="#改变演示" class="headerlink" title="改变演示"></a>改变演示</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)<span class="string">touchesBegan:</span>(NSSet&lt;UITouch *&gt; *)touches <span class="string">withEvent:</span>(UIEvent *)event &#123;</div><div class="line"></div><div class="line">[[self <span class="string">mutableArrayValueForKey:</span>@<span class="string">"array"</span>] <span class="string">addObject:</span>@“fsfs”];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)dealloc &#123;</div><div class="line">[_model <span class="string">removeObserver:</span>self <span class="string">forKeyPath:</span>@<span class="string">"array"</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -401,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/20/基于Hexo和Github-Pages搭建个人博客/" rel="next" title="基于Hexo和Github Pages搭建个人博客">
-                <i class="fa fa-chevron-left"></i> 基于Hexo和Github Pages搭建个人博客
+              <a href="/2017/12/05/native和js交互/" rel="next" title="Native+Js 交互">
+                <i class="fa fa-chevron-left"></i> Native+Js 交互
               </a>
             
           </div>
@@ -410,10 +401,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/05/native和js交互/" rel="prev" title="Native+Js 交互">
-                Native+Js 交互 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -570,7 +557,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在类的头文件中尽量少引用其他的头文件"><span class="nav-number">1.</span> <span class="nav-text">在类的头文件中尽量少引用其他的头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-number">2.</span> <span class="nav-text">要点:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子："><span class="nav-number">3.</span> <span class="nav-text">例子：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变演示"><span class="nav-number">4.</span> <span class="nav-text">改变演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除"><span class="nav-number">5.</span> <span class="nav-text">移除</span></a></li></ol></div>
             
 
           </div>

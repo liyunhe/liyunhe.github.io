@@ -262,6 +262,157 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yorklee.top/2017/12/05/如何监听一个数组count的变化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/7835941?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="York Lee">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/05/如何监听一个数组count的变化/" itemprop="url">如何监听一个数组count的变化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T16:36:28+08:00">
+                2017-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IOS技术/" itemprop="url" rel="index">
+                    <span itemprop="name">IOS技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>如何监听一个数组count的变化</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>1、可以在改变数组个数时，进行相应的处理，如果监听的范围不大的话，哪addObject 、removeObject方里处理要监听的事件等</p>
+<p>2、比较高效的做是：<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="name">self</span> mutableArrayValueForKey:@<span class="string">"array"</span>] addObject:@“ff”]<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<p>这样改变数组时就会触发KVO了。</p>
+<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@interface</span> <span class="attribute">Controller </span>: UIViewController</div><div class="line"><span class="variable">@property</span> (nonatomic, copy) NSString *name;</div><div class="line"><span class="variable">@property</span> (nonatomic, strong) NSMutableArray *array;</div><div class="line"><span class="variable">@end</span></div></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">[self</span> <span class="attr">addObserver:self</span> <span class="attr">forKeyPath:@"array"</span></div><div class="line"><span class="attr">options:</span><span class="string">NSKeyValueObservingOptionNew</span> <span class="string">| NSKeyValueObservingOptionOld</span></div><div class="line"><span class="string"></span><span class="attr">context:</span><span class="literal">NULL</span></div><div class="line"><span class="string">];</span></div></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (void)observeValueForKeyPath:(NSString *)keyPath ofObjec<span class="variable">t:</span>(id)object <span class="keyword">change</span>:(NSDictionary&lt;NSString *,id&gt; *)<span class="keyword">change</span> contex<span class="variable">t:</span>(void *)context &#123;</div><div class="line"><span class="keyword">if</span> ([keyPath isEqualToStrin<span class="variable">g:</span>@<span class="string">"array"</span>]) &#123;</div><div class="line">NSLog(@<span class="comment">"%zd”,self.array.count);</span></div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="改变演示"><a href="#改变演示" class="headerlink" title="改变演示"></a>改变演示</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)<span class="string">touchesBegan:</span>(NSSet&lt;UITouch *&gt; *)touches <span class="string">withEvent:</span>(UIEvent *)event &#123;</div><div class="line"></div><div class="line">[[self <span class="string">mutableArrayValueForKey:</span>@<span class="string">"array"</span>] <span class="string">addObject:</span>@“fsfs”];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)dealloc &#123;</div><div class="line">[_model <span class="string">removeObserver:</span>self <span class="string">forKeyPath:</span>@<span class="string">"array"</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yorklee.top/2017/12/05/native和js交互/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -812,7 +963,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
