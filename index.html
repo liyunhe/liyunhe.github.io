@@ -262,6 +262,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yorklee.top/2017/12/09/css-html学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/7835941?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="York Lee">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/09/css-html学习笔记/" itemprop="url">CSS+Html学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-09T15:14:44+08:00">
+                2017-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="HTML标签类型"><a href="#HTML标签类型" class="headerlink" title="HTML标签类型"></a>HTML标签类型</h3><h4 id="HTML有N多标签，根据显示的类型，主要可以分为3大类"><a href="#HTML有N多标签，根据显示的类型，主要可以分为3大类" class="headerlink" title="HTML有N多标签，根据显示的类型，主要可以分为3大类"></a>HTML有N多标签，根据显示的类型，主要可以分为3大类</h4><ul>
+<li>块级标签</li>
+</ul>
+<p>独占一行的标签<br>能随时设置宽度和高度（比如div、p、h1、h2、ul、li）</p>
+<ul>
+<li><p>行内标签（内联标签）<br>多个行内标签能同时显示在一行<br>宽度和高度取决于内容的尺寸（比如span、a、label）</p>
+</li>
+<li><p>行内-块级标签（内联-块级标签）<br>多个行内-块级标签可以显示在同一行<br>能随时设置宽度和高度（比如input、button）</p>
+</li>
+</ul>
+<h3 id="修改标签的显示类型"><a href="#修改标签的显示类型" class="headerlink" title="修改标签的显示类型"></a>修改标签的显示类型</h3><ul>
+<li>CSS中有个display属性，能修改标签的显示类型<br><code>none</code>：隐藏标签<br><code>block</code>：让标签变为块级标签<br><code>inline</code>：让标签变为行内标签<br><code>inline-block</code>：让标签变为行内-块级标签（内联-块级标签）<h3 id="CSS属性"><a href="#CSS属性" class="headerlink" title="CSS属性"></a>CSS属性</h3></li>
+<li>可继承属性<br>父标签的属性值会传递给子标签<br>一般是文字控制属性</li>
+<li>不可继承属性<br>父标签的属性值不能传递给子标签<br>一般是区块控制属性</li>
+</ul>
+<h3 id="CSS属性-–-可继承属性（加粗表示常用）"><a href="#CSS属性-–-可继承属性（加粗表示常用）" class="headerlink" title="CSS属性 – 可继承属性（加粗表示常用）"></a>CSS属性 – 可继承属性（加粗表示常用）</h3><ul>
+<li>所有标签可继承<br><strong>visibility</strong>、<strong>cursor</strong></li>
+<li><p>内联标签可继承<br>letter-spacing、word-spacing、white-space、<strong>line-height、color、font、font-family、font-size</strong>、font-style、font-variant、<strong>font-weight、text-decoration</strong>、text-transform、direction</p>
+</li>
+<li><p>块级标签可继承</p>
+</li>
+</ul>
+<p><strong>text-indent、text-align</strong></p>
+<p><em>列表标签可继承<br><em>*list-style</em></em>、list-style-type、list-style-position、list-style-image</p>
+<h3 id="CSS属性-–-不可继承属性（加粗表示常用）"><a href="#CSS属性-–-不可继承属性（加粗表示常用）" class="headerlink" title="CSS属性 – 不可继承属性（加粗表示常用）"></a>CSS属性 – 不可继承属性（加粗表示常用）</h3><p><strong><em>display、margin、border、padding、background</em></strong><br><strong><em>height、min-height、max-height、width、min-width、max-width</em></strong><br><strong><em>overflow、position、left、right、top、bottom、z-index</em></strong><br><strong><em>float</em></strong>、clear<br>table-layout、vertical-align<br>page-break-after、page-bread-before<br>unicode-bidi</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yorklee.top/2017/12/08/App中图片特别多，导致内存占用非常高怎么办/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1250,7 +1416,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1261,7 +1427,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1272,7 +1438,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
