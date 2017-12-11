@@ -355,20 +355,22 @@
       
         
           
-            <h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>网页上的每一个标签都是一个盒子</p>
-<h4 id="每个盒子都有四个属性"><a href="#每个盒子都有四个属性" class="headerlink" title="每个盒子都有四个属性"></a>每个盒子都有四个属性</h4><ul>
-<li><p>内容（content）<br><br>盒子里装的东西<br>网页中通常是指文字和图片</p>
-</li>
-<li><p>填充（padding，内边距）<br><br>怕盒子里装的（贵重的）东西损坏，而添加的泡沫或者其它抗震的辅料</p>
-</li>
-<li>边框（border）：盒子本身</li>
-<li>边界（margin，外边距）<br><br>盒子摆放的时候的不能全部堆在一起，盒子之间要留一定空隙保持通风，    同时也为了方便取出<br><br><img src="/2017/12/11/盒子模型理解/box.png" alt="图片"><br><br></li>
-</ul>
-<h3 id="标准盒子模型"><a href="#标准盒子模型" class="headerlink" title="标准盒子模型"></a>标准盒子模型</h3><p><img src="/2017/12/11/盒子模型理解/nonboxModel.png" alt=""></p>
-<h3 id="内容（content）-–-属性"><a href="#内容（content）-–-属性" class="headerlink" title="内容（content） – 属性"></a>内容（content） – 属性</h3><p><img src="/2017/12/11/盒子模型理解/1.png" alt=""></p>
-<h3 id="填充（padding，内边距）-–-属性"><a href="#填充（padding，内边距）-–-属性" class="headerlink" title="填充（padding，内边距） – 属性"></a>填充（padding，内边距） – 属性</h3><p><img src="/2017/12/11/盒子模型理解/2.png" alt=""><br><img src="/2017/12/11/盒子模型理解/3.png" alt=""></p>
+          盒子模型网页上的每一个标签都是一个盒子
+每个盒子都有四个属性
+内容（content）盒子里装的东西网页中通常是指文字和图片
 
-          
+填充（padding，内边距）怕盒子里装的（贵重的）东西损坏，而添加的泡沫或者其它抗震的辅料
+
+边框（border）：盒子本身
+边界（margin，外边距）盒子摆放的时候的不
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/11/盒子模型理解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -508,33 +510,22 @@
       
         
           
-            <h3 id="HTML标签类型"><a href="#HTML标签类型" class="headerlink" title="HTML标签类型"></a>HTML标签类型</h3><h4 id="HTML有N多标签，根据显示的类型，主要可以分为3大类"><a href="#HTML有N多标签，根据显示的类型，主要可以分为3大类" class="headerlink" title="HTML有N多标签，根据显示的类型，主要可以分为3大类"></a>HTML有N多标签，根据显示的类型，主要可以分为3大类</h4><ul>
-<li>块级标签</li>
-</ul>
-<p>独占一行的标签<br>能随时设置宽度和高度（比如div、p、h1、h2、ul、li）</p>
-<ul>
-<li><p>行内标签（内联标签）<br>多个行内标签能同时显示在一行<br>宽度和高度取决于内容的尺寸（比如span、a、label）</p>
-</li>
-<li><p>行内-块级标签（内联-块级标签）<br>多个行内-块级标签可以显示在同一行<br>能随时设置宽度和高度（比如input、button）</p>
-</li>
-</ul>
-<h3 id="修改标签的显示类型"><a href="#修改标签的显示类型" class="headerlink" title="修改标签的显示类型"></a>修改标签的显示类型</h3><ul>
-<li>CSS中有个display属性，能修改标签的显示类型<br><code>none</code>：隐藏标签<br><code>block</code>：让标签变为块级标签<br><code>inline</code>：让标签变为行内标签<br><code>inline-block</code>：让标签变为行内-块级标签（内联-块级标签）<h3 id="CSS属性"><a href="#CSS属性" class="headerlink" title="CSS属性"></a>CSS属性</h3></li>
-<li>可继承属性<br>父标签的属性值会传递给子标签<br>一般是文字控制属性</li>
-<li>不可继承属性<br>父标签的属性值不能传递给子标签<br>一般是区块控制属性</li>
-</ul>
-<h3 id="CSS属性-–-可继承属性（加粗表示常用）"><a href="#CSS属性-–-可继承属性（加粗表示常用）" class="headerlink" title="CSS属性 – 可继承属性（加粗表示常用）"></a>CSS属性 – 可继承属性（加粗表示常用）</h3><ul>
-<li>所有标签可继承<br><strong>visibility</strong>、<strong>cursor</strong></li>
-<li><p>内联标签可继承<br>letter-spacing、word-spacing、white-space、<strong>line-height、color、font、font-family、font-size</strong>、font-style、font-variant、<strong>font-weight、text-decoration</strong>、text-transform、direction</p>
-</li>
-<li><p>块级标签可继承</p>
-</li>
-</ul>
-<p><strong>text-indent、text-align</strong></p>
-<p><em>列表标签可继承<br><em>*list-style</em></em>、list-style-type、list-style-position、list-style-image</p>
-<h3 id="CSS属性-–-不可继承属性（加粗表示常用）"><a href="#CSS属性-–-不可继承属性（加粗表示常用）" class="headerlink" title="CSS属性 – 不可继承属性（加粗表示常用）"></a>CSS属性 – 不可继承属性（加粗表示常用）</h3><p><strong><em>display、margin、border、padding、background</em></strong><br><strong><em>height、min-height、max-height、width、min-width、max-width</em></strong><br><strong><em>overflow、position、left、right、top、bottom、z-index</em></strong><br><strong><em>float</em></strong>、clear<br>table-layout、vertical-align<br>page-break-after、page-bread-before<br>unicode-bidi</p>
+          HTML标签类型HTML有N多标签，根据显示的类型，主要可以分为3大类
+块级标签
 
-          
+独占一行的标签能随时设置宽度和高度（比如div、p、h1、h2、ul、li）
+
+行内标签（内联标签）多个行内标签能同时显示在一行宽度和高度取决于内容的尺寸（比如span、a、label）
+
+行内-块级标签（内联-块级
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/09/css-html学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -674,10 +665,15 @@
       
         
           
-            <h3 id="App中图片特别多，导致内存占用非常高怎么办？"><a href="#App中图片特别多，导致内存占用非常高怎么办？" class="headerlink" title="App中图片特别多，导致内存占用非常高怎么办？"></a>App中图片特别多，导致内存占用非常高怎么办？</h3><h2 id="在使用SDWebImage加载图片过多导致内存非常高该如何处理"><a href="#在使用SDWebImage加载图片过多导致内存非常高该如何处理" class="headerlink" title="在使用SDWebImage加载图片过多导致内存非常高该如何处理"></a>在使用SDWebImage加载图片过多导致内存非常高该如何处理</h2><h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p> 在appdelegate中设置<br> <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">BOOL)application:(UIApplication </span>*)application <span class="keyword">didFinishLaunchingWithOptions:(NSDictionary </span>*)launchOptions &#123;</div><div class="line">[SDImageCache <span class="keyword">sharedImageCache].maxMemoryCost </span>= <span class="number">1024</span> * <span class="number">1024</span> * <span class="number">50</span><span class="comment">;//最多50M内存占用</span></div><div class="line">[SDImageCache <span class="keyword">sharedImageCache].maxCacheSize </span>= <span class="number">1024</span> * <span class="number">1024</span> * <span class="number">50</span><span class="comment">;//最多50M磁盘占用</span></div><div class="line">return YES<span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p> 如果在某类viewcontroller中收到内存警告还可以清理当前viewcontroller中的内存<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-(void)<span class="keyword">didReceiveMemoryWarning&#123;</span></div><div class="line"><span class="keyword">[[SDImageCache </span><span class="keyword">sharedImageCache] </span>clearMemory]<span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
+          App中图片特别多，导致内存占用非常高怎么办？在使用SDWebImage加载图片过多导致内存非常高该如何处理解决 在appdelegate中设置 12345- (BOOL)application:(UIApplication *)application didFinishLaunchingWithO
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/08/App中图片特别多，导致内存占用非常高怎么办/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -817,10 +813,15 @@
       
         
           
-            <h3 id="IOS原生端如何使用JSCore进行原生和iOS的交互"><a href="#IOS原生端如何使用JSCore进行原生和iOS的交互" class="headerlink" title="IOS原生端如何使用JSCore进行原生和iOS的交互"></a>IOS原生端如何使用JSCore进行原生和iOS的交互</h3><h3 id="OC调用js的方法"><a href="#OC调用js的方法" class="headerlink" title="OC调用js的方法"></a>OC调用js的方法</h3><p><code>在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中</code><br><code>[webView stringByEvaluatingJavaScriptFromString:@&quot;editReady2();”];</code><br>调用此方法即可调用js中的方法。<br>此处有的时候可能会调用不到js中的方法，原因有可能是js的代码和html的代码是分开放置的，通过此时不一定能够拿到js中的代码。解决的方法是，先获取整个html的代码。在html代码的后面拼接js的路径，然后使用 webView loadHtml的方法去执行网页上的数据。</p>
-<h3 id="JS调用oc中的方法"><a href="#JS调用oc中的方法" class="headerlink" title="JS调用oc中的方法"></a>JS调用oc中的方法</h3><p><code>在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中</code><br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">JSContext *context = [self.webView valueForKeyPath:@<span class="string">"documentView.webView.mainFrame.javaScriptContext”];</span></div><div class="line"><span class="comment">//change2  前后端约定的字符串</span></div><div class="line">context[@<span class="string">"change2"</span>] = ^()&#123;</div><div class="line">NSArray *params = [JSContext currentArguments];</div><div class="line"><span class="comment">//根据点击js端的方法，会传递对应的参数给OC端，OC端根据约定的参数规则即可相应的对应的操作。</span></div><div class="line">NSLog(@“%@“,params);</div><div class="line">&#125;;</div><div class="line">`</div></pre></td></tr></table></figure></p>
-
-          
+          IOS原生端如何使用JSCore进行原生和iOS的交互OC调用js的方法在 - (void)webViewDidFinishLoad:(UIWebView *)webView 方法中[webView stringByEvaluatingJavaScriptFromString:@&quot;edit
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/05/iOS原生端如何使用JSCore进行原生和iOS的交互/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -960,18 +961,17 @@
       
         
           
-            <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>如何监听一个数组count的变化</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>1、可以在改变数组个数时，进行相应的处理，如果监听的范围不大的话，哪addObject 、removeObject方里处理要监听的事件等</p>
-<p>2、比较高效的做是：<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="name">self</span> mutableArrayValueForKey:@<span class="string">"array"</span>] addObject:@“ff”]<span class="comment">;</span></div></pre></td></tr></table></figure></p>
-<p>这样改变数组时就会触发KVO了。</p>
-<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@interface</span> <span class="attribute">Controller </span>: UIViewController</div><div class="line"><span class="variable">@property</span> (nonatomic, copy) NSString *name;</div><div class="line"><span class="variable">@property</span> (nonatomic, strong) NSMutableArray *array;</div><div class="line"><span class="variable">@end</span></div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">[self</span> <span class="attr">addObserver:self</span> <span class="attr">forKeyPath:@"array"</span></div><div class="line"><span class="attr">options:</span><span class="string">NSKeyValueObservingOptionNew</span> <span class="string">| NSKeyValueObservingOptionOld</span></div><div class="line"><span class="string"></span><span class="attr">context:</span><span class="literal">NULL</span></div><div class="line"><span class="string">];</span></div></pre></td></tr></table></figure>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (void)observeValueForKeyPath:(NSString *)keyPath ofObjec<span class="variable">t:</span>(id)object <span class="keyword">change</span>:(NSDictionary&lt;NSString *,id&gt; *)<span class="keyword">change</span> contex<span class="variable">t:</span>(void *)context &#123;</div><div class="line"><span class="keyword">if</span> ([keyPath isEqualToStrin<span class="variable">g:</span>@<span class="string">"array"</span>]) &#123;</div><div class="line">NSLog(@<span class="comment">"%zd”,self.array.count);</span></div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="改变演示"><a href="#改变演示" class="headerlink" title="改变演示"></a>改变演示</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)<span class="string">touchesBegan:</span>(NSSet&lt;UITouch *&gt; *)touches <span class="string">withEvent:</span>(UIEvent *)event &#123;</div><div class="line"></div><div class="line">[[self <span class="string">mutableArrayValueForKey:</span>@<span class="string">"array"</span>] <span class="string">addObject:</span>@“fsfs”];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)dealloc &#123;</div><div class="line">[_model <span class="string">removeObserver:</span>self <span class="string">forKeyPath:</span>@<span class="string">"array"</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
+          问题如何监听一个数组count的变化
+解决方案1、可以在改变数组个数时，进行相应的处理，如果监听的范围不大的话，哪addObject 、removeObject方里处理要监听的事件等
+2、比较高效的做是：1[[self mutableArrayValueForKey:@"array"] addObj
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/05/如何监听一个数组count的变化/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1111,43 +1111,19 @@
       
         
           
-            <h3 id="框架选择-DSBridge-v2-0"><a href="#框架选择-DSBridge-v2-0" class="headerlink" title="框架选择 DSBridge-v2.0"></a>框架选择 DSBridge-v2.0</h3><h4 id="相关说明："><a href="#相关说明：" class="headerlink" title="相关说明："></a>相关说明：</h4><p>DSBridge是Javascript桥梁，通过它我们可以在web和Native之间同步和异步地调用函数。而且，android和ios都支持！<br><a href="https://github.com/wendux/DSBridge-IOS" target="_blank" rel="external">DSBridge-IOS:</a></p>
-<p><a href="https://github.com/wendux/DSBridge-IOS" target="_blank" rel="external">DSBridge-Android:</a></p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
-<li><p>在Object-C中实现API委托类</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//JsApiTest.m</span></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">JsApiTest</span></span></div><div class="line"><span class="comment">//for synchronous invocation</span></div><div class="line">- (<span class="built_in">NSString</span> *) testSyn:(<span class="built_in">NSDictionary</span> *) args</div><div class="line">&#123;</div><div class="line"><span class="comment">// The return value type can only be  NSString</span></div><div class="line"><span class="keyword">return</span> [(<span class="built_in">NSString</span> *)[args valueForKey:<span class="string">@"msg"</span>] stringByAppendingString:<span class="string">@"[ syn call]"</span>];</div><div class="line">&#125;</div><div class="line"><span class="comment">//for asynchronous invocation</span></div><div class="line">- (<span class="built_in">NSString</span> *) testAsyn:(<span class="built_in">NSDictionary</span> *) args :(<span class="keyword">void</span> (^)(<span class="built_in">NSString</span> * _Nullable result,<span class="built_in">BOOL</span> isComplete))handler</div><div class="line">&#123;</div><div class="line">handler([(<span class="built_in">NSString</span> *)[args valueForKey:<span class="string">@"msg"</span>] stringByAppendingString:<span class="string">@"[ asyn call]"</span>],<span class="literal">YES</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>安装API委托类到DWebView.</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">DWebview * webview=<span class="comment">[<span class="comment">[DWebview alloc]</span> initWithFrame:bounds]</span>;</div><div class="line">jsApi=<span class="comment">[<span class="comment">[JsApiTest alloc]</span> init]</span>;</div><div class="line">webview.JavascriptInterfaceObject=jsApi;</div></pre></td></tr></table></figure>
-</li>
-<li><p>在Javascript中调用Object-C API，并为以下Object-c调用声明全局JavaScript函数。</p>
-<h4 id="Init-dsBridge"><a href="#Init-dsBridge" class="headerlink" title="Init dsBridge"></a>Init dsBridge</h4></li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//cdn</span></div><div class="line"><span class="comment">//&lt;script src="https://unpkg.com/dsbridge/dist/dsbridge.js"&gt; &lt;/script&gt;</span></div><div class="line"><span class="comment">//npm</span></div><div class="line"><span class="comment">//npm install dsbridge</span></div><div class="line"><span class="keyword">var</span> dsBridge=<span class="built_in">require</span>(<span class="string">"dsbridge"</span>)</div></pre></td></tr></table></figure>
-<h5 id="Call-API"><a href="#Call-API" class="headerlink" title="Call API"></a>Call API</h5><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Call synchronously</span></div><div class="line"><span class="keyword">var</span> str=dsBridge.call(<span class="string">"testSyn"</span>, &#123;msg: <span class="string">"testSyn"</span>&#125;);</div><div class="line"></div><div class="line"><span class="comment">//Call asynchronously</span></div><div class="line">dsBridge.call(<span class="string">"testAsyn"</span>, &#123;msg: <span class="string">"testAsyn"</span>&#125;, <span class="function"><span class="keyword">function</span> <span class="params">(v)</span> </span>&#123;</div><div class="line">alert(v);</div><div class="line">&#125;)</div><div class="line"><span class="comment">//Register javascrit function for Native invocation</span></div><div class="line">dsBridge.register(<span class="string">'addValue'</span>,<span class="function"><span class="keyword">function</span><span class="params">(l,r)</span></span>&#123;</div><div class="line"><span class="keyword">return</span> l+r;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<ul>
-<li>Call Javascript function in Object-C .<figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[<span class="name">_webview</span> callHandler:@<span class="string">"addValue"</span></div><div class="line">arguments:[[<span class="name">NSArray</span> alloc] initWithObjects:@1,@<span class="string">"hello"</span>, nil]</div><div class="line">completionHandler:^(<span class="name">NSString</span> *  value)&#123;</div><div class="line">NSLog(<span class="name">@</span><span class="string">"%@"</span>,value)<span class="comment">;</span></div><div class="line">&#125;]<span class="comment">;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="JavaScript-API介绍"><a href="#JavaScript-API介绍" class="headerlink" title="JavaScript API介绍"></a>JavaScript API介绍</h3><hr>
-<h4 id="dsBridge"><a href="#dsBridge" class="headerlink" title="dsBridge"></a>dsBridge</h4><p>“dsBridge”是一个内置对象，它有两个方法“调用”和“注册”</p>
-<h4 id="dsBridge-call-method-args-callback"><a href="#dsBridge-call-method-args-callback" class="headerlink" title="dsBridge.call(method,[args,callback])"></a>dsBridge.call(method,[args,callback])</h4><p>同步和异步调用Object-C api。</p>
-<p>方法：Object-c方法名称</p>
-<p>参数与json对象</p>
-<p>回调（String returnValue）：回调来处理结果。只需要异步调用。</p>
-<h4 id="dsBridge-register-methodName-function"><a href="#dsBridge-register-methodName-function" class="headerlink" title="dsBridge.register(methodName,function)"></a>dsBridge.register(methodName,function)</h4><p>为OC调用注册javascript方法。</p>
-<p>methodName：javascript函数名称</p>
-<p>函数：javascript方法体。</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><hr>
-<h4 id="Object-c-API-signature"><a href="#Object-c-API-signature" class="headerlink" title="Object-c API signature"></a>Object-c API signature</h4><p>为了与IOS和Android兼容，我们在native api签名上做了以下约定：<br>返回值的tye必须是NSString;如果不需要，只需返回零。<br>NSDictionary传递的参数，如果API不需要参数，你仍然需要声明参数</p>
-<h3 id="调用JavaScript代码"><a href="#调用JavaScript代码" class="headerlink" title="调用JavaScript代码"></a>调用JavaScript代码</h3><p>有两种方法提供的DWebView调用JavaScript</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//call javascript functions</span></div><div class="line"><span class="selector-tag">-</span>(void)<span class="selector-tag">callHandler</span><span class="selector-pseudo">:(NSString</span> *)<span class="selector-tag">methodName</span> <span class="selector-tag">arguments</span><span class="selector-pseudo">:(NSArray</span> * <span class="selector-tag">_Nullable</span>)<span class="selector-tag">args</span></div><div class="line"><span class="selector-tag">completionHandler</span><span class="selector-pseudo">:(void</span> (^)(NSString * _Nullable))<span class="selector-tag">completionHandler</span>;</div><div class="line"><span class="comment">//execute any javascript code</span></div><div class="line"><span class="selector-tag">-</span> (void)<span class="selector-tag">evaluateJavaScript</span><span class="selector-pseudo">:(NSString</span> *)<span class="selector-tag">javaScriptString</span></div><div class="line"><span class="selector-tag">completionHandler</span><span class="selector-pseudo">:(void</span> (^ _Nullable)(NSString * _Nullable))<span class="selector-tag">completionHandler</span>;</div></pre></td></tr></table></figure>
-<h3 id="本机调用JavaScript函数的机会"><a href="#本机调用JavaScript函数的机会" class="headerlink" title="本机调用JavaScript函数的机会"></a>本机调用JavaScript函数的机会</h3><p>JavaScript代码只能在javascript上下文初始化成功时执行。有一个Api：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)<span class="string">setJavascriptContextInitedListener:</span>(<span class="keyword">void</span>(^_Nullable)(<span class="keyword">void</span>))callback;</div></pre></td></tr></table></figure></p>
-<p>例：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">__block DWebview * _webview=webview;</div><div class="line">[webview <span class="string">setJavascriptContextInitedListener:</span>^()&#123;</div><div class="line">[_webview <span class="string">callHandler:</span>@<span class="string">"addValue"</span></div><div class="line"><span class="string">arguments:</span>[[NSArray alloc] <span class="string">initWithObjects:</span>@<span class="number">1</span>,@<span class="string">"hello"</span>, nil]</div><div class="line"><span class="string">completionHandler:</span>^(NSString *  value)&#123;</div><div class="line">NSLog(@<span class="string">"%@"</span>,value);</div><div class="line">&#125;];</div><div class="line">&#125;];</div></pre></td></tr></table></figure></p>
-<h3 id="更多关于DWebview"><a href="#更多关于DWebview" class="headerlink" title="更多关于DWebview"></a>更多关于DWebview</h3><p>有三个WebView可用，DWKwebview，DUIwebview和DWebview，他们都提供相同的接口，你可以用户任何你想要的。值得一提的是，DWebview只是DWKwebview和DUIwebview的代理，而ios系统的vesion&gt; = 8.0，DWKwebview将被使用，否则，DUIwebview将会是。</p>
-<h3 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h3><p>如果您使用的是DUIwebview，请不要设置代理prop。因为代表道具已经内置，请设置WebEventDelegate！</p>
-
-          
+          框架选择 DSBridge-v2.0相关说明：DSBridge是Javascript桥梁，通过它我们可以在web和Native之间同步和异步地调用函数。而且，android和ios都支持！DSBridge-IOS:
+DSBridge-Android:
+使用
+在Object-C中实现API委托类
+12
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/05/native和js交互/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1287,28 +1263,16 @@
       
         
           
-            <h2 id="在类的头文件中尽量少引用其他的头文件"><a href="#在类的头文件中尽量少引用其他的头文件" class="headerlink" title="在类的头文件中尽量少引用其他的头文件"></a>在类的头文件中尽量少引用其他的头文件</h2><p>与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//OneClass.h</span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Founsdation.h&gt;</span></span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">OneClass</span> : <span class="title">NSObject</span></span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_one;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_two;</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//OneClass.m</span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"OneClass.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">OneClass</span></span></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在Objective-C几乎任何类都需要引用`&lt;Foundation/Foundation.h&gt;`如果不引用这个框架的化，就要引用与其超类所对应得框架。例如`&lt;UIViewController&gt;`需要引用`&lt;UIKit.h&gt;`,OK,过一段时间你又创建了一个`&lt;TwoClass&gt;`然后你觉得每个类`&lt;OneClass&gt;`OneClass里有应该存在一个`&lt;TwoClas&gt;`一般都会为`&lt;OneClass&gt;`添加一条属性</div></pre></td></tr></table></figure>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//OneClass.h</span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"TwoClass.h"</span></span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">OneClass</span> : <span class="title">NSObject</span></span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_one;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_two;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>)TwoClass *two_obj;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<p>OK！！ 这样的确完成了我们的需求，但是存在一个问题:在编译一个使用<code>&lt;OneClass&gt;</code>文件时，我们不用知道<code>&lt;TwoClass&gt;</code>的全部细节，我们只要知道有以类名叫<code>&lt;TwoClass&gt;</code>存在就好了！SO！！有一个办法可以将这种情况告诉编译器:</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//OneClass.h</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@class</span> <span class="title">TwoClass</span>; //向前声明该类</span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">OneClass</span> : <span class="title">NSObject</span></span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_one;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)<span class="built_in">NSString</span> *str_two;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>)TwoClass *two_obj;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<p><oneclass><code>则要引用</code><twoclas>`的头文件，因为如果你想使用后者，就要必须知道他的所有详细的接口，于是实现问加就是:</twoclas></oneclass></p>
-<p>//OneClass.m<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#<span class="keyword">import</span> <span class="string">"OneClass.h"</span></div><div class="line">#<span class="keyword">import</span> <span class="string">"TwoClass.h"</span></div><div class="line">@<span class="keyword">implementation</span> OneClass</div><div class="line">@end</div></pre></td></tr></table></figure></p>
-<pre><code>将引用头文件的时间尽量延后，只在确有需要的时候在引用，这样就可以减少类的使用者所需要因入头文件的数量，加入把`&lt;TwoClas&gt;`引入到`&lt;OneClass&gt;`的头文件中，那么没引用一次`&lt;OneClass&gt;`就相当与引用
-</code></pre><p><twoclas><code>和</code><oneclass><code>2个文件，若这种情况持续下去，则要引用许多根本永不到的内容，会增加编译时间。
-    向前声明也解决了2个类相互引用的问题。假如</code><twoclas><code>添加新增和删除</code><oneclass>`对象的方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></oneclass></twoclas></oneclass></twoclas></p>
-<p>@interface TwoClass : NSObject<br>-(void)addObj:(OneClass <em>)add_obj;<br>-(void)removeObj:(OneClass </em>)add_obj;<br>@end</p>
-<p>```</p>
-<p>此时，若要编译<code>&lt;OneClass&gt;</code>，则编译器必须知道<code>&lt;TwoClas&gt;</code>这个类，而要编译器编译<code>&lt;OneClass&gt;</code>，则有知道<code>&lt;TwoClas&gt;</code>如果在各自的头文件引用对方的头文件，则会导致循环引用，如果使用<code>&lt;import&gt;</code>而非<code>&lt;include&gt;</code>不会导致死循环，如果使用<code>&lt;include&gt;</code>则会死循环，可以测试一下。如果<code>&lt;TwoClas&gt;</code>继承<code>&lt;OneClass&gt;</code>，这种情况是要在头文件中去声明。</p>
-<h2 id="要点"><a href="#要点" class="headerlink" title="要点:"></a>要点:</h2><ul>
-<li><p>除非却又必要，否侧不要引入头文件，一般来说，应在某个类的头文件中使用向前声明来提起别的类，并在实现文件中引用引用那些头文件，这样做可以尽量降低类之间的耦合。</p>
-</li>
-<li><p>有时无法使用向前声明，比如要声明某个类遵循一项协议。这种情况下，尽量把该类遵循这个协议的申明转移到分类中进行，最后不行，就把协议单独放在一个头文件中，然后使用！</p>
-</li>
-</ul>
-
-          
+          在类的头文件中尽量少引用其他的头文件与C和C++一样Objective-C也是使用头文件（header file）与实现文件（implementation file）来区隔代码其中代码如下：
+1234567891011121314//OneClass.h#import &lt;Foundation/
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/21/编写高效率的IOS代码 （一）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1448,45 +1412,28 @@
       
         
           
-            <p><img src="/images/download.jpg" alt="测试"></p>
-<h2 id="为什么要使用Hexo和Github-Pages搭建个人博客？"><a href="#为什么要使用Hexo和Github-Pages搭建个人博客？" class="headerlink" title="为什么要使用Hexo和Github Pages搭建个人博客？"></a>为什么要使用Hexo和Github Pages搭建个人博客？</h2><ul>
-<li>简单 </li>
-<li>容易使用 （操作简单）</li>
-<li>省钱 (不用买服务器，不用买域名)<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2></li>
-<li>GitHub账号</li>
-<li>Node.js (Hexo 是基于Node.js的)</li>
-<li>安装Hexo</li>
-<li>建站</li>
-<li>配置</li>
-<li>发布文章</li>
-</ul>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h2 id="GitHub账号"><a href="#GitHub账号" class="headerlink" title="GitHub账号"></a>GitHub账号</h2><ul>
-<li>在你自己的GitHub账号上创建一个 repository 名字为:<code>username.github.io</code>‘<strong><em>切记:username必须和用户名一致</em></strong></li>
-</ul>
-<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><ul>
-<li>用homebrew来的Node.js<br><strong><em><a href="http://www.jianshu.com/p/4e80b42823d5" target="_blank" rel="external">homebrew详细的安装步骤的安装</a></em></strong> <h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2></li>
-</ul>
-<p><code>brew link node</code><br><code>brew uninstall node</code><br><code>brew install node</code></p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p><code>npm install -g hexo-cli</code></p>
-<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><p>第一步：建立一个自己的站点，比如我的叫YorkLee<br><code>$ hexo init YorkLee</code><br><code>$ cd YorkLee</code><br><code>$ npm YorkLee</code><br>站点结构如下：</p>
-<p><code>├── _config.yml     # 配置文件，大部分的配置都靠它</code><br><code>├── package.json    # 应用程序的信息</code><br><code>├── scaffolds        # 模板信息，创建文章时使用</code><br><code>├── source              # 资源和Markdown文件存放地方</code><br><code>|   ├── _drafts        # 草稿，当layout指定为draft时，默认不解析发布</code><br><code>|   └── _posts        # 准备发布的文章，每次generate会解析该目录下的文章</code><br><code>└── themes              # 主题， 静态文件会根据主题来生成</code></p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>建站完成之后，当然是要配置了，这里最重要的就是_config.yml</p>
-<p>文件，可以参考<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">官方文档</a>，记得要配置Github账号信息, 需要填写type, repo, branch</p>
-<p><code># Deployment</code><br><code>## Docs: https://hexo.io/docs/deployment.html</code><br><code>deploy:</code><br>  <code>type: git</code><br>  <code>repo: https://github.com/liyunhe/liyunhe.github.io.git</code><br>  <code>branch: master</code><br>  <code># --------------------------------------------------------------</code><br><code># background settings</code><br><code># --------------------------------------------------------------</code><br><code># add canvas-nest effect</code><br><code># see detail from https://github.com/hustcc/canvas-nest.js</code></p>
-<p><img src="https://baoyuzhang.github.io/img/2017-05-12_170337.png" alt="格式不能错"><br><strong><em>一定要注意格式 格式不一样会报错</em></strong></p>
-<p>可以先从本地看下有没有部署成功</p>
-<p><code>hexo s</code><br>会提示：<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000</a>查看内容</p>
-<h2 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h2><ul>
-<li><a href="https://hexo.io/themes/" target="_blank" rel="external">官方主题</a>：官方提供的各种主题</li>
-<li><a href="https://www.zhihu.com/question/24422335" target="_blank" rel="external">有哪些好看的 Hexo 主题? - 知乎</a></li>
-</ul>
-<p>下载的话直接clone就可以网上例子有好多</p>
-<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>安装<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a>自动部署发布工具<br><code>$ npm install hexo-deployer-git --save</code></p>
-<p>测试没问题后，我们就生成静态网页文件发布至我们的Github pages 中。</p>
-<p><code>$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p>
-<p>现在就可以访问了<a href="https://liyunhe.github.io/" target="_blank" rel="external">https://liyunhe.github.io/</a></p>
-
           
+为什么要使用Hexo和Github Pages搭建个人博客？
+简单 
+容易使用 （操作简单）
+省钱 (不用买服务器，不用买域名)准备工作
+GitHub账号
+Node.js (Hexo 是基于Node.js的)
+安装Hexo
+建站
+配置
+发布文章
+
+开始GitHub账号
+在你自己的GitHub账号上
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/20/基于Hexo和Github-Pages搭建个人博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
