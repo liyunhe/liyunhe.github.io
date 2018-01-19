@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="前言该篇文章是介绍安卓的一些基础知识，本人是IOS工程师一枚，为什么学安卓，纯粹的兴趣爱好。文章作文技术分享备忘，本文大部分技术内容来源于《一行代码》这本书 ，希望能帮助和我一样想学习安卓的朋友们~ Android 系统架构Android 大致分为四层架构，五块区域 Linux 内核层Android系统是基于Linux 2.6内核，这一层为安卓提供了底层的驱动，入音频驱动，照相驱动，蓝牙驱动…">
+<meta name="description" content="前言该篇文章是介绍安卓的一些基础知识，本人是IOS工程师一枚，为什么学安卓，纯粹的兴趣爱好。文章作文技术分享备忘，本文大部分技术内容来源于《第一行代码》这本书 ，希望能帮助和我一样想学习安卓的朋友们~ Android 系统架构Android 大致分为四层架构，五块区域 Linux 内核层Android系统是基于Linux 2.6内核，这一层为安卓提供了底层的驱动，入音频驱动，照相驱动，蓝牙驱动…">
 <meta name="keywords" content="Android学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android王国之系统架构">
 <meta property="og:url" content="http://yorklee.top/2018/01/19/android王国/index.html">
 <meta property="og:site_name" content="York Lee">
-<meta property="og:description" content="前言该篇文章是介绍安卓的一些基础知识，本人是IOS工程师一枚，为什么学安卓，纯粹的兴趣爱好。文章作文技术分享备忘，本文大部分技术内容来源于《一行代码》这本书 ，希望能帮助和我一样想学习安卓的朋友们~ Android 系统架构Android 大致分为四层架构，五块区域 Linux 内核层Android系统是基于Linux 2.6内核，这一层为安卓提供了底层的驱动，入音频驱动，照相驱动，蓝牙驱动…">
+<meta property="og:description" content="前言该篇文章是介绍安卓的一些基础知识，本人是IOS工程师一枚，为什么学安卓，纯粹的兴趣爱好。文章作文技术分享备忘，本文大部分技术内容来源于《第一行代码》这本书 ，希望能帮助和我一样想学习安卓的朋友们~ Android 系统架构Android 大致分为四层架构，五块区域 Linux 内核层Android系统是基于Linux 2.6内核，这一层为安卓提供了底层的驱动，入音频驱动，照相驱动，蓝牙驱动…">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yorklee.top/2018/01/19/android王国/9DBAFCF5-C623-43E8-BE4D-B65E9DD67AF5.png">
-<meta property="og:updated_time" content="2018-01-19T04:13:40.206Z">
+<meta property="og:updated_time" content="2018-01-19T08:06:17.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android王国之系统架构">
-<meta name="twitter:description" content="前言该篇文章是介绍安卓的一些基础知识，本人是IOS工程师一枚，为什么学安卓，纯粹的兴趣爱好。文章作文技术分享备忘，本文大部分技术内容来源于《一行代码》这本书 ，希望能帮助和我一样想学习安卓的朋友们~ Android 系统架构Android 大致分为四层架构，五块区域 Linux 内核层Android系统是基于Linux 2.6内核，这一层为安卓提供了底层的驱动，入音频驱动，照相驱动，蓝牙驱动…">
+<meta name="twitter:description" content="前言该篇文章是介绍安卓的一些基础知识，本人是IOS工程师一枚，为什么学安卓，纯粹的兴趣爱好。文章作文技术分享备忘，本文大部分技术内容来源于《第一行代码》这本书 ，希望能帮助和我一样想学习安卓的朋友们~ Android 系统架构Android 大致分为四层架构，五块区域 Linux 内核层Android系统是基于Linux 2.6内核，这一层为安卓提供了底层的驱动，入音频驱动，照相驱动，蓝牙驱动…">
 <meta name="twitter:image" content="http://yorklee.top/2018/01/19/android王国/9DBAFCF5-C623-43E8-BE4D-B65E9DD67AF5.png">
 
 
@@ -364,7 +364,7 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>该篇文章是介绍安卓的一些基础知识，本人是IOS工程师一枚，为什么学安卓，纯粹的兴趣爱好。文章作文技术分享备忘，本文大部分技术内容来源于《一行代码》这本书 ，希望能帮助和我一样想学习安卓的朋友们~</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>该篇文章是介绍安卓的一些基础知识，本人是IOS工程师一枚，为什么学安卓，纯粹的兴趣爱好。文章作文技术分享备忘，本文大部分技术内容来源于《第一行代码》这本书 ，希望能帮助和我一样想学习安卓的朋友们~</p>
 <h3 id="Android-系统架构"><a href="#Android-系统架构" class="headerlink" title="Android 系统架构"></a>Android 系统架构</h3><p>Android 大致分为四层架构，五块区域</p>
 <h4 id="Linux-内核层"><a href="#Linux-内核层" class="headerlink" title="Linux 内核层"></a>Linux 内核层</h4><p>Android系统是基于Linux 2.6内核，这一层为安卓提供了底层的驱动，入音频驱动，照相驱动，蓝牙驱动… </p>
 <h4 id="系统运行层"><a href="#系统运行层" class="headerlink" title="系统运行层"></a>系统运行层</h4><p>这一层主要是通过C C++ 库 为安卓提供了 数据库，openGL/Es 3d 绘图等</p>
