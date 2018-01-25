@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="前端基础," />
+  <meta name="keywords" content="vapor 学习," />
 
 
 
@@ -79,24 +79,18 @@
 
 
 
-<meta name="description" content="盒子模型网页上的每一个标签都是一个盒子 每个盒子都有四个属性 内容（content）盒子里装的东西网页中通常是指文字和图片  填充（padding，内边距）怕盒子里装的（贵重的）东西损坏，而添加的泡沫或者其它抗震的辅料  边框（border）：盒子本身 边界（margin，外边距）盒子摆放的时候的不能全部堆在一起，盒子之间要留一定空隙保持通风，    同时也为了方便取出  标准盒子模型 内容（co">
-<meta name="keywords" content="前端基础">
+<meta name="description" content="前言在文章开始前，先感谢 [leacode] (https://www.jianshu.com/p/82d44f617832)对我的指引和引导。如果有对vapor有兴趣的同学可以加入QQ群：431296189 大家一起讨论和学习，本群对新技术学习和热爱的同行非常欢迎，有其他想法的同学请绕行。 vaporVapor是Swift最常用的Web框架，也就是说作为一个iOS开发者，如果你对后台想有些涉及，">
+<meta name="keywords" content="vapor 学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="盒子模型">
-<meta property="og:url" content="http://yorklee.top/2017/12/11/盒子模型理解/index.html">
+<meta property="og:title" content="进击的vapor之vapor介绍">
+<meta property="og:url" content="http://yorklee.top/2018/01/25/进击的vapor之vapor介绍/index.html">
 <meta property="og:site_name" content="York Lee">
-<meta property="og:description" content="盒子模型网页上的每一个标签都是一个盒子 每个盒子都有四个属性 内容（content）盒子里装的东西网页中通常是指文字和图片  填充（padding，内边距）怕盒子里装的（贵重的）东西损坏，而添加的泡沫或者其它抗震的辅料  边框（border）：盒子本身 边界（margin，外边距）盒子摆放的时候的不能全部堆在一起，盒子之间要留一定空隙保持通风，    同时也为了方便取出  标准盒子模型 内容（co">
+<meta property="og:description" content="前言在文章开始前，先感谢 [leacode] (https://www.jianshu.com/p/82d44f617832)对我的指引和引导。如果有对vapor有兴趣的同学可以加入QQ群：431296189 大家一起讨论和学习，本群对新技术学习和热爱的同行非常欢迎，有其他想法的同学请绕行。 vaporVapor是Swift最常用的Web框架，也就是说作为一个iOS开发者，如果你对后台想有些涉及，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yorklee.top/2017/12/11/盒子模型理解/box.png">
-<meta property="og:image" content="http://yorklee.top/2017/12/11/盒子模型理解/nonboxModel.png">
-<meta property="og:image" content="http://yorklee.top/2017/12/11/盒子模型理解/1.png">
-<meta property="og:image" content="http://yorklee.top/2017/12/11/盒子模型理解/2.png">
-<meta property="og:image" content="http://yorklee.top/2017/12/11/盒子模型理解/3.png">
-<meta property="og:updated_time" content="2017-12-11T03:20:54.707Z">
+<meta property="og:updated_time" content="2018-01-25T03:07:15.781Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="盒子模型">
-<meta name="twitter:description" content="盒子模型网页上的每一个标签都是一个盒子 每个盒子都有四个属性 内容（content）盒子里装的东西网页中通常是指文字和图片  填充（padding，内边距）怕盒子里装的（贵重的）东西损坏，而添加的泡沫或者其它抗震的辅料  边框（border）：盒子本身 边界（margin，外边距）盒子摆放的时候的不能全部堆在一起，盒子之间要留一定空隙保持通风，    同时也为了方便取出  标准盒子模型 内容（co">
-<meta name="twitter:image" content="http://yorklee.top/2017/12/11/盒子模型理解/box.png">
+<meta name="twitter:title" content="进击的vapor之vapor介绍">
+<meta name="twitter:description" content="前言在文章开始前，先感谢 [leacode] (https://www.jianshu.com/p/82d44f617832)对我的指引和引导。如果有对vapor有兴趣的同学可以加入QQ群：431296189 大家一起讨论和学习，本群对新技术学习和热爱的同行非常欢迎，有其他想法的同学请绕行。 vaporVapor是Swift最常用的Web框架，也就是说作为一个iOS开发者，如果你对后台想有些涉及，">
 
 
 
@@ -126,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yorklee.top/2017/12/11/盒子模型理解/"/>
+  <link rel="canonical" href="http://yorklee.top/2018/01/25/进击的vapor之vapor介绍/"/>
 
 
 
 
 
-  <title>盒子模型 | York Lee</title>
+  <title>进击的vapor之vapor介绍 | York Lee</title>
   
 
 
@@ -269,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yorklee.top/2017/12/11/盒子模型理解/">
+    <link itemprop="mainEntityOfPage" href="http://yorklee.top/2018/01/25/进击的vapor之vapor介绍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="York Lee">
@@ -286,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">盒子模型</h1>
+          <h1 class="post-title" itemprop="name headline">进击的vapor之vapor介绍</h1>
         
 
         <div class="post-meta">
@@ -298,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T10:34:55+08:00">
-                2017-12-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-25T10:51:05+08:00">
+                2018-01-25
               </time>
             
 
@@ -321,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/vapor-学习/" itemprop="url" rel="index">
+                    <span itemprop="name">vapor 学习</span>
                   </a>
                 </span>
 
@@ -339,8 +333,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/11/盒子模型理解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/12/11/盒子模型理解/" itemprop="commentsCount"></span>
+                <a href="/2018/01/25/进击的vapor之vapor介绍/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/25/进击的vapor之vapor介绍/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -368,18 +362,17 @@
       
 
       
-        <h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>网页上的每一个标签都是一个盒子</p>
-<h4 id="每个盒子都有四个属性"><a href="#每个盒子都有四个属性" class="headerlink" title="每个盒子都有四个属性"></a>每个盒子都有四个属性</h4><ul>
-<li><p>内容（content）<br><br>盒子里装的东西<br>网页中通常是指文字和图片</p>
-</li>
-<li><p>填充（padding，内边距）<br><br>怕盒子里装的（贵重的）东西损坏，而添加的泡沫或者其它抗震的辅料</p>
-</li>
-<li>边框（border）：盒子本身</li>
-<li>边界（margin，外边距）<br><br>盒子摆放的时候的不能全部堆在一起，盒子之间要留一定空隙保持通风，    同时也为了方便取出<br><br><img src="/2017/12/11/盒子模型理解/box.png" alt="图片"><br><br></li>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在文章开始前，先感谢 [leacode] (<a href="https://www.jianshu.com/p/82d44f617832)对我的指引和引导。如果有对vapor有兴趣的同学可以加入QQ群：431296189" target="_blank" rel="external">https://www.jianshu.com/p/82d44f617832)对我的指引和引导。如果有对vapor有兴趣的同学可以加入QQ群：431296189</a> 大家一起讨论和学习，本群对新技术学习和热爱的同行非常欢迎，有其他想法的同学请绕行。</p>
+<h3 id="vapor"><a href="#vapor" class="headerlink" title="vapor"></a>vapor</h3><p>Vapor是Swift最常用的Web框架，也就是说作为一个iOS开发者，如果你对后台想有些涉及，可以利用Vapor去搭建一套自己的web服务器</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>纯 Swift 实现</li>
+<li>模块化</li>
+<li>丰富的表现力</li>
 </ul>
-<h3 id="标准盒子模型"><a href="#标准盒子模型" class="headerlink" title="标准盒子模型"></a>标准盒子模型</h3><p><img src="/2017/12/11/盒子模型理解/nonboxModel.png" alt=""></p>
-<h3 id="内容（content）-–-属性"><a href="#内容（content）-–-属性" class="headerlink" title="内容（content） – 属性"></a>内容（content） – 属性</h3><p><img src="/2017/12/11/盒子模型理解/1.png" alt=""></p>
-<h3 id="填充（padding，内边距）-–-属性"><a href="#填充（padding，内边距）-–-属性" class="headerlink" title="填充（padding，内边距） – 属性"></a>填充（padding，内边距） – 属性</h3><p><img src="/2017/12/11/盒子模型理解/2.png" alt=""><br><img src="/2017/12/11/盒子模型理解/3.png" alt=""></p>
+<h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><p><a href="http://qutheory.io" target="_blank" rel="external">vapor官网</a></p>
+<h3 id="Vapor-Repo"><a href="#Vapor-Repo" class="headerlink" title="Vapor Repo"></a>Vapor Repo</h3><p><a href="https://github.com/qutheory/vapor" target="_blank" rel="external">Vapor Repo</a></p>
+<h3 id="Doc-地址"><a href="#Doc-地址" class="headerlink" title="Doc 地址"></a>Doc 地址</h3><p><a href="https://vapor.readme.io/" target="_blank" rel="external">英文原版 Doc 地址</a></p>
+<p><a href="https://github.com/CaryZheng/Vapor-Chinese" target="_blank" rel="external">中文版 Doc 地址</a></p>
 
       
     </div>
@@ -397,7 +390,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端基础/" rel="tag"># 前端基础</a>
+            <a href="/tags/vapor-学习/" rel="tag"># vapor 学习</a>
           
         </div>
       
@@ -410,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/09/css-html学习笔记/" rel="next" title="CSS标签的效果继承和类型">
-                <i class="fa fa-chevron-left"></i> CSS标签的效果继承和类型
+              <a href="/2018/01/24/Android王国之Activity的探究/" rel="next" title="Android王国之Activity的探究">
+                <i class="fa fa-chevron-left"></i> Android王国之Activity的探究
               </a>
             
           </div>
@@ -419,10 +412,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/12/第三方支付调研之Beecloud/" rel="prev" title="第三方支付调研之Beecloud和ping++">
-                第三方支付调研之Beecloud和ping++ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -581,7 +570,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子模型"><span class="nav-number">1.</span> <span class="nav-text">盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#每个盒子都有四个属性"><span class="nav-number">1.1.</span> <span class="nav-text">每个盒子都有四个属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准盒子模型"><span class="nav-number">2.</span> <span class="nav-text">标准盒子模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容（content）-–-属性"><span class="nav-number">3.</span> <span class="nav-text">内容（content） – 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#填充（padding，内边距）-–-属性"><span class="nav-number">4.</span> <span class="nav-text">填充（padding，内边距） – 属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vapor"><span class="nav-number">2.</span> <span class="nav-text">vapor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">3.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#官网"><span class="nav-number">4.</span> <span class="nav-text">官网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vapor-Repo"><span class="nav-number">5.</span> <span class="nav-text">Vapor Repo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Doc-地址"><span class="nav-number">6.</span> <span class="nav-text">Doc 地址</span></a></li></ol></div>
             
 
           </div>
