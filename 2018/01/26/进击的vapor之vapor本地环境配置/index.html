@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="安装xcode从App Store下载xcode 检查Swift版本依赖123eval &quot;$(curl -sL check.vapor.sh)&quot;✅  Compatible Xcode✅  Compatible with Vapor 2 安装Vapor 安装homebrew  添加Homebrew Tap   在macOS安装Vapor的tap后，它会让homebrew拥有安装所有package的权">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进击的vapor之vapor本地环境配置">
+<meta property="og:url" content="http://yorklee.top/2018/01/26/进击的vapor之vapor本地环境配置/index.html">
+<meta property="og:site_name" content="York Lee">
+<meta property="og:description" content="安装xcode从App Store下载xcode 检查Swift版本依赖123eval &quot;$(curl -sL check.vapor.sh)&quot;✅  Compatible Xcode✅  Compatible with Vapor 2 安装Vapor 安装homebrew  添加Homebrew Tap   在macOS安装Vapor的tap后，它会让homebrew拥有安装所有package的权">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yorklee.top/2018/01/26/进击的vapor之vapor本地环境配置/run.png">
+<meta property="og:image" content="http://yorklee.top/2018/01/26/进击的vapor之vapor本地环境配置/ruest.png">
+<meta property="og:updated_time" content="2018-01-26T04:58:35.807Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="进击的vapor之vapor本地环境配置">
+<meta name="twitter:description" content="安装xcode从App Store下载xcode 检查Swift版本依赖123eval &quot;$(curl -sL check.vapor.sh)&quot;✅  Compatible Xcode✅  Compatible with Vapor 2 安装Vapor 安装homebrew  添加Homebrew Tap   在macOS安装Vapor的tap后，它会让homebrew拥有安装所有package的权">
+<meta name="twitter:image" content="http://yorklee.top/2018/01/26/进击的vapor之vapor本地环境配置/run.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yorklee.top/2018/01/26/进击的vapor之vapor本地环境配置/"/>
+
+
+
+
+
+  <title>进击的vapor之vapor本地环境配置 | York Lee</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">York Lee</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">别让你的人生毁在冲动里</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yorklee.top/2018/01/26/进击的vapor之vapor本地环境配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/7835941?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="York Lee">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">进击的vapor之vapor本地环境配置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T11:01:49+08:00">
+                2018-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/26/进击的vapor之vapor本地环境配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/26/进击的vapor之vapor本地环境配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="安装xcode"><a href="#安装xcode" class="headerlink" title="安装xcode"></a>安装xcode</h3><p>从App Store下载xcode</p>
+<h3 id="检查Swift版本依赖"><a href="#检查Swift版本依赖" class="headerlink" title="检查Swift版本依赖"></a>检查Swift版本依赖</h3><figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">eval</span> <span class="string">"$(curl -sL check.vapor.sh)"</span></div><div class="line">✅  Compatible Xcode</div><div class="line">✅  Compatible <span class="keyword">with</span> Vapor <span class="number">2</span></div></pre></td></tr></table></figure>
+<h3 id="安装Vapor"><a href="#安装Vapor" class="headerlink" title="安装Vapor"></a>安装Vapor</h3><ul>
+<li><p>安装homebrew</p>
+</li>
+<li><p>添加Homebrew Tap</p>
+</li>
+</ul>
+<p>在macOS安装Vapor的tap后，它会让homebrew拥有安装所有package的权限。</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">MrleedeMBP:YorkLee mrlee$ brew tap vapor/homebrew-tap</div><div class="line">Updating Homebrew...</div><div class="line">=<span class="ruby">=&gt; Auto-updated Homebrew!</span></div><div class="line"><span class="ruby">Updated <span class="number">1</span> tap (homebrew/core).</span></div><div class="line"><span class="ruby">==&gt; Cleaning up /Library/Caches/Homebrew...</span></div><div class="line"><span class="ruby">==&gt; Migrating /Library/Caches/Homebrew to /Users/mrlee/Library/Caches/Homebrew..</span></div><div class="line"><span class="ruby">==&gt; Deleting /Library/Caches/Homebrew...</span></div><div class="line"><span class="ruby">==&gt; Updated Formulae</span></div><div class="line"><span class="ruby">cromwell        gutenberg       nco             sslyze          wget</span></div><div class="line"><span class="ruby">duplicity       ldns            pwntools        superlu</span></div><div class="line"><span class="ruby">emscripten      mercurial       saldl           transmission</span></div><div class="line"><span class="ruby">gcc             mingw-w64       socat           w3m</span></div><div class="line"><span class="ruby">==&gt; Deleted Formulae</span></div><div class="line"><span class="ruby">pcap_dnsproxy</span></div><div class="line"><span class="ruby"></span></div><div class="line"><span class="ruby"><span class="symbol">MrleedeMBP:</span>YorkLee mrlee$ brew update</span></div><div class="line"><span class="ruby">Already up-to-date.</span></div></pre></td></tr></table></figure>
+<h3 id="安装vapor"><a href="#安装vapor" class="headerlink" title="安装vapor"></a>安装vapor</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">brew install vapor</div><div class="line">==&gt; Installing vapor <span class="keyword">from</span> vapor/tap</div><div class="line">==&gt; Downloading https:<span class="comment">//github.com/vapor/toolbox/releases/download/3.1.3/macOS-s</span></div><div class="line">==&gt; Downloading <span class="keyword">from</span> https:<span class="comment">//github-production-release-asset-2e65be.s3.amazonaws</span></div><div class="line">######################################################################## <span class="number">100.0</span>%</div><div class="line">🍺  /usr/local/Cellar/vapor/<span class="number">3.1</span><span class="number">.3</span>: <span class="number">4</span> files, <span class="number">17.0</span>MB, built <span class="keyword">in</span> <span class="number">24</span> seconds</div></pre></td></tr></table></figure>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">Commands:</div><div class="line">         new Creates a new Vapor application from a template.</div><div class="line">             <span class="keyword">Use</span> <span class="comment">--template=repo/template for github templates</span></div><div class="line">             <span class="keyword">Use</span> <span class="comment">--template=full-url-here.git for non github templates</span></div><div class="line">             <span class="keyword">Use</span> <span class="comment">--web to create a new web app</span></div><div class="line">             <span class="keyword">Use</span> <span class="comment">--auth to create a new authenticated API app</span></div><div class="line">             <span class="keyword">Use</span> <span class="comment">--api (default) to create a new API</span></div><div class="line">       <span class="keyword">build</span> Compiles the application.</div><div class="line">         run Runs the <span class="keyword">compiled</span> application.</div><div class="line">       <span class="keyword">fetch</span> Fetches the application<span class="string">'s dependencies.</span></div><div class="line"><span class="string">      update Updates your dependencies.</span></div><div class="line"><span class="string">       clean Cleans temporary files--usually fixes</span></div><div class="line"><span class="string">             a plethora of bizarre build errors.</span></div><div class="line"><span class="string">        test Runs the application'</span>s tests.</div><div class="line">       xcode Generates an Xcode <span class="keyword">project</span> <span class="keyword">for</span> development.</div><div class="line">             Additionally links commonly used libraries.</div><div class="line">     <span class="keyword">version</span> Displays Vapor CLI <span class="keyword">version</span></div><div class="line">       cloud Commands <span class="keyword">for</span> interacting <span class="keyword">with</span> Vapor Cloud.</div><div class="line">  cloud-beta [BETA!] Commands <span class="keyword">for</span> interacting <span class="keyword">with</span> Vapor Cloud.</div><div class="line">      heroku Commands <span class="keyword">to</span> <span class="keyword">help</span> deploy <span class="keyword">to</span> Heroku.</div><div class="line">    provider Commands <span class="keyword">to</span> <span class="keyword">help</span> manage providers.</div></pre></td></tr></table></figure>
+<h3 id="创建第一个工程"><a href="#创建第一个工程" class="headerlink" title="创建第一个工程"></a>创建第一个工程</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">MrleedeMBP:Desktop mrlee$ vapor new hello</div><div class="line">Cloning Template [Done]</div><div class="line">Updating Package Name [Done]</div><div class="line">Initializing git repository [Done]</div><div class="line"></div><div class="line"><span class="comment">                                          **</span></div><div class="line"><span class="comment">                                        **~~**</span></div><div class="line"><span class="comment">                                      **~~~~~~**</span></div><div class="line"><span class="comment">                                    **~~~~~~~~~~**</span></div><div class="line"><span class="comment">                                  **~~~~~~~~~~~~~~**</span></div><div class="line"><span class="comment">                                **~~~~~~~~~~~~~~~~~~**</span></div><div class="line"><span class="comment">                              **~~~~~~~~~~~~~~~~~~~~~~**</span></div><div class="line"><span class="comment">                             **~~~~~~~~~~~~~~~~~~~~~~~~**</span></div><div class="line"><span class="comment">                            **~~~~~~~~~~~~~~~~~~~~~~~~~~**</span></div><div class="line"><span class="comment">                           **~~~~~~~~~~~~~~~~~~~~~~~~~~~~**</span></div><div class="line"><span class="comment">                           **~~~~~~~~~~~~~~~~~~~~~~~~~~~~**</span></div><div class="line"><span class="comment">                           **~~~~~~~~~~~~~~~~~~~~~++++~~~**</span></div><div class="line"><span class="comment">                            **~~~~~~~~~~~~~~~~~~~++++~~~**</span></div><div class="line"><span class="comment">                             ***~~~~~~~~~~~~~~~++++~~~***</span></div><div class="line"><span class="comment">                               ****~~~~~~~~~~++++~~****</span></div><div class="line"><span class="comment">                                  *****~~~~~~~~~*****</span></div><div class="line"><span class="comment">                                     *************</span></div><div class="line">                            </div><div class="line">                            _       __    ___   ___   ___</div><div class="line">                           \ \  /  / /\  | |_) / / \ | |_)</div><div class="line">                            \_\/  /_/--\ |_|   \_\_/ |_| \</div><div class="line">                              a web framework <span class="keyword">for</span> Swift</div><div class="line"></div><div class="line">                        Project <span class="string">"HelloWorld"</span> has been created.</div><div class="line">                 <span class="keyword">Type</span> `<span class="keyword">cd</span> HelloWorld` to enter the project directory.</div><div class="line">                <span class="keyword">Use</span> `vapor cloud deploy` to host your project <span class="keyword">for</span> free!</div><div class="line">                                        Enjoy!</div></pre></td></tr></table></figure>
+<h4 id="在创建工程时候可以指定模板"><a href="#在创建工程时候可以指定模板" class="headerlink" title="在创建工程时候可以指定模板"></a>在创建工程时候可以指定模板</h4><ul>
+<li>API –template=api 使用Fluent数据库提供json的api</li>
+<li>Web –template=web 使用leaf模版创建的html网站</li>
+<li>Auth –template=auth <a href="https://github.com/vapor/auth-" target="_blank" rel="external">https://github.com/vapor/auth-</a> template</li>
+<li>Nodes-Vapor –template=nodes-vapor</li>
+<li>Truemetal –template=truemetal</li>
+<li>UserRepo –template=user/repo <a href="http://github.com/user/repo" target="_blank" rel="external">http://github.com/user/repo</a></li>
+<li>FullPath –template=<a href="http://example.com/repo-path" target="_blank" rel="external">http://example.com/repo-path</a></li>
+</ul>
+<p>如果我们要创建一个网站，则可以用下面命令：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vapor <span class="keyword">new</span> hello <span class="comment">--template=web</span></div></pre></td></tr></table></figure>
+<h3 id="Xocde打开工程"><a href="#Xocde打开工程" class="headerlink" title="Xocde打开工程"></a>Xocde打开工程</h3><ul>
+<li>cd 到工程目录 例如：cd hello</li>
+<li>利用命令打开Xcode </li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">MrleedeMBP:hello mrlee$ vapor xcode</div><div class="line">Generating Xcode Project [Done]</div><div class="line"><span class="keyword">Select</span> the <span class="string">`Run`</span> scheme <span class="keyword">to</span> run.</div><div class="line"><span class="keyword">Open</span> Xcode <span class="keyword">project</span>?</div><div class="line">y/n&gt; y</div></pre></td></tr></table></figure>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p><img src="/2018/01/26/进击的vapor之vapor本地环境配置/run.png" alt="图片"></p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="/2018/01/26/进击的vapor之vapor本地环境配置/ruest.png" alt="图片"></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>欢迎广大iOS开发者入坑，技术交流QQ群：431296189 </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/25/进击的vapor之vapor介绍/" rel="next" title="进击的vapor之vapor介绍">
+                <i class="fa fa-chevron-left"></i> 进击的vapor之vapor介绍
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars3.githubusercontent.com/u/7835941?s=460&v=4"
+                alt="York Lee" />
+            
+              <p class="site-author-name" itemprop="name">York Lee</p>
+              <p class="site-description motion-element" itemprop="description">一个浪漫的极客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/liyunhe" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/cb67405d7a9f" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-globe"></i>简书</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装xcode"><span class="nav-number">1.</span> <span class="nav-text">安装xcode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检查Swift版本依赖"><span class="nav-number">2.</span> <span class="nav-text">检查Swift版本依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Vapor"><span class="nav-number">3.</span> <span class="nav-text">安装Vapor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装vapor"><span class="nav-number">4.</span> <span class="nav-text">安装vapor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">5.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建第一个工程"><span class="nav-number">6.</span> <span class="nav-text">创建第一个工程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在创建工程时候可以指定模板"><span class="nav-number">6.1.</span> <span class="nav-text">在创建工程时候可以指定模板</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Xocde打开工程"><span class="nav-number">7.</span> <span class="nav-text">Xocde打开工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行"><span class="nav-number">8.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果"><span class="nav-number">9.</span> <span class="nav-text">结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">10.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">York Lee</span>
+
+  
+</div>
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'liyunhe',
+            repo: 'liyunhe.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '361e780e75c1fc4d85b81dcdc1e84918ceaca732',
+            
+                client_id: '4c7e1b78d554418c5470'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
